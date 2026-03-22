@@ -7,11 +7,11 @@ class RabbitMQPublisher:
     self.__port = 5672
     self.__username = "guest"
     self.__password = "guest"
-    self.__exchange = ""
+    self.__exchange = "my_exchange"
     self.__routing_key = ""
     self.__channel = None
     
-  def create_channel(self) -> None:
+  def create_channel(self):
     connection_parameters = pika.ConnectionParameters(
       host = self.__host,
       port = self.__port,
